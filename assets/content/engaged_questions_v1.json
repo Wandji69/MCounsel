@@ -1,0 +1,190 @@
+{
+  "language": "en",
+  "stage": "engaged",
+  "reviewStatus": "draft",
+  "categories": [
+    {
+      "id": "values-life-goals",
+      "title": "Values and life goals",
+      "description": "What a shared life needs to make room for."
+    },
+    {
+      "id": "money",
+      "title": "Money, debt, saving, and spending",
+      "description": "What each person wants to know, keep private, and decide together."
+    },
+    {
+      "id": "children-family",
+      "title": "Children and family expectations",
+      "description": "Whether children are part of the life you imagine, and what care would look like."
+    },
+    {
+      "id": "extended-family",
+      "title": "Extended family and boundaries",
+      "description": "Time with family, and decisions that stay with the couple."
+    },
+    {
+      "id": "faith-traditions",
+      "title": "Faith, culture, and traditions",
+      "description": "Practices and family traditions you want a home to recognize."
+    },
+    {
+      "id": "household",
+      "title": "Household responsibilities",
+      "description": "The daily work of a home, including planning and remembering."
+    }
+  ],
+  "questions": [
+    {
+      "id": "values-ordinary-week",
+      "version": 1,
+      "categoryId": "values-life-goals",
+      "title": "An ordinary week",
+      "text": "When you imagine an ordinary week in your marriage, what do you hope it feels like?",
+      "stage": "engaged",
+      "sensitivity": "standard",
+      "guidance": "This asks for a preference, not a promise. There is no correct picture of a week.",
+      "followUpPrompts": [
+        "Which part of that week matters most to you?",
+        "What would tell you the week had gone well?"
+      ],
+      "reviewStatus": "draft",
+      "language": "en"
+    },
+    {
+      "id": "values-hard-season",
+      "version": 1,
+      "categoryId": "values-life-goals",
+      "title": "A hard season",
+      "text": "If work, health, or money became difficult for a while, what would you want from each other?",
+      "stage": "engaged",
+      "sensitivity": "standard",
+      "guidance": "You can describe the kind of support you want without deciding every detail now.",
+      "followUpPrompts": [
+        "What kind of help is useful to you, and what kind feels like pressure?"
+      ],
+      "reviewStatus": "draft",
+      "language": "en"
+    },
+    {
+      "id": "money-what-we-know",
+      "version": 1,
+      "categoryId": "money",
+      "title": "What we each know",
+      "text": "How much do you want to know about each other's income, debt, and spending before you marry, and what do you want to keep private?",
+      "stage": "engaged",
+      "sensitivity": "standard",
+      "guidance": "This asks for a boundary and an expectation. You do not need to type amounts in this practice app.",
+      "followUpPrompts": [
+        "Which money topics would you want to review on a regular basis?"
+      ],
+      "reviewStatus": "draft",
+      "language": "en"
+    },
+    {
+      "id": "money-disagreement",
+      "version": 1,
+      "categoryId": "money",
+      "title": "A spending disagreement",
+      "text": "When you and your partner want to use money differently, how would you like to decide?",
+      "stage": "engaged",
+      "sensitivity": "standard",
+      "guidance": "This asks for a way of deciding. It does not ask who is more careful with money.",
+      "followUpPrompts": [
+        "Is there an amount or a kind of purchase you would want to discuss first?"
+      ],
+      "reviewStatus": "draft",
+      "language": "en"
+    },
+    {
+      "id": "children-whether",
+      "version": 1,
+      "categoryId": "children-family",
+      "title": "Whether you want children",
+      "text": "Do you want children, are you unsure, or do you want a life without children? What would you want your partner to understand about that?",
+      "stage": "engaged",
+      "sensitivity": "high",
+      "guidance": "You can skip this. You do not owe the app or your partner an immediate answer. It is all right to say you are unsure. This asks for an expectation, and expectations can change.",
+      "followUpPrompts": [
+        "What would you want your partner to avoid assuming?"
+      ],
+      "reviewStatus": "draft",
+      "language": "en"
+    },
+    {
+      "id": "children-care",
+      "version": 1,
+      "categoryId": "children-family",
+      "title": "Care and timing",
+      "text": "If children are part of the life you imagine, what timing and caregiving arrangement would you hope for? If they are not, what do you want your shared life to make room for instead?",
+      "stage": "engaged",
+      "sensitivity": "standard",
+      "guidance": "Either direction is a complete answer. Skip this if you are not ready to discuss it.",
+      "followUpPrompts": [
+        "Who else, if anyone, would you want involved in day-to-day care?"
+      ],
+      "reviewStatus": "draft",
+      "language": "en"
+    },
+    {
+      "id": "family-time",
+      "version": 1,
+      "categoryId": "extended-family",
+      "title": "Time with family",
+      "text": "How do you hope to spend time with each of your families after you marry, including holidays and visits?",
+      "stage": "engaged",
+      "sensitivity": "standard",
+      "guidance": "This is a preference. You can describe what you want without criticizing anyone.",
+      "followUpPrompts": [
+        "Which occasions matter most to you, and which are flexible?"
+      ],
+      "reviewStatus": "draft",
+      "language": "en"
+    },
+    {
+      "id": "family-decisions",
+      "version": 1,
+      "categoryId": "extended-family",
+      "title": "Decisions that stay with the couple",
+      "text": "Which decisions do you want the two of you to make together, without needing agreement from parents or other relatives?",
+      "stage": "engaged",
+      "sensitivity": "standard",
+      "guidance": "This asks for a boundary. One or two decisions are enough. You do not need a complete list.",
+      "followUpPrompts": [
+        "How would you like to tell your families when a decision is yours alone?"
+      ],
+      "reviewStatus": "draft",
+      "language": "en"
+    },
+    {
+      "id": "faith-home",
+      "version": 1,
+      "categoryId": "faith-traditions",
+      "title": "Faith and traditions at home",
+      "text": "Which beliefs, practices, or family traditions do you want your home to recognize, and which would you like to decide together?",
+      "stage": "engaged",
+      "sensitivity": "high",
+      "guidance": "You can skip this if you are not ready. People do not need to share the same beliefs for this question to be useful. You do not owe the app or your partner an immediate answer.",
+      "followUpPrompts": [
+        "What would respect look like when you do not share a practice?"
+      ],
+      "reviewStatus": "draft",
+      "language": "en"
+    },
+    {
+      "id": "household-work",
+      "version": 1,
+      "categoryId": "household",
+      "title": "The work of home",
+      "text": "How do you imagine sharing cooking, cleaning, errands, and the planning that keeps a home running?",
+      "stage": "engaged",
+      "sensitivity": "standard",
+      "guidance": "Include the work of remembering and planning, not only physical chores. This is an expectation you can revisit.",
+      "followUpPrompts": [
+        "Which tasks do you want to own, share, or leave open for now?"
+      ],
+      "reviewStatus": "draft",
+      "language": "en"
+    }
+  ]
+}
