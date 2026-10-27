@@ -4,7 +4,9 @@ A practice app for engaged couples to answer difficult questions in private, the
 
 This repository currently contains the phase 0 decisions and a Flutter prototype. The prototype keeps practice answers in memory. It does not create accounts, store answers on disk, or call a server or an AI provider. Do not type real relationship information.
 
-The decided stack is a Flutter app, a Laravel API in `backend/`, and Supabase for Postgres and Auth. That split is recorded in [0002-laravel-and-supabase.md](docs/decisions/0002-laravel-and-supabase.md). The Laravel app is the next build, after the prototype is confirmed on the Pixel 9 emulator.
+The decided stack is a Flutter app, a Laravel API in `backend/`, and Supabase for Postgres and Auth. That split is recorded in [0002-laravel-and-supabase.md](docs/decisions/0002-laravel-and-supabase.md).
+
+Phase 2 adds sign-in. The phone asks Supabase Auth for a session, then calls Laravel with that access token. Laravel returns only the signed-in profile. Practice answers still stay in memory. Do not type real relationship information.
 
 ## Decisions
 
@@ -33,3 +35,27 @@ flutter run -d emulator
 ```
 
 Open the project folder in Android Studio and choose the Pixel 9 device to run the same app from the IDE.
+
+## Run the API
+
+Copy `backend/.env.example` to `backend/.env`, set `SUPABASE_JWT_SECRET` to the JWT secret from the Supabase project, and run migrations. The service-role key stays in that file. Do not pass it to Flutter.
+
+```bash
+cd backend
+composer install
+php artisan key:generate
+php artisan migrate
+php artisan test
+php artisan serve --host=0.0.0.0 --port=8000
+```
+
+On a phone, point the app at this machine's address. The anon key is the public Supabase client key. It is not the service-role key.
+
+```bash
+flutter run -d <device-id> \
+  --dart-define=SUPABASE_URL=https://YOUR_PROJECT.supabase.co \
+  --dart-define=SUPABASE_ANON_KEY=YOUR_ANON_KEY \
+  --dart-define=API_BASE_URL=http://YOUR_COMPUTER_IP:8000
+```
+
+Apply [supabase/migrations/20261027180000_identity_rls.sql](supabase/migrations/20261027180000_identity_rls.sql) in the Supabase SQL editor after `php artisan migrate` has created the tables. A hosted Supabase project is still required before sign-in works on a phone. `php artisan test` covers the authorization rule locally.
