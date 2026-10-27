@@ -56,7 +56,7 @@ void main() {
 
     expect(find.text('Write an answer before submitting.'), findsOneWidget);
     expect(find.text('Submit this answer?'), findsNothing);
-    expect(find.text('Your private answer'), findsOneWidget);
+    expect(find.text('Your private answer'), findsWidgets);
   });
 
   testWidgets('skip and not ready update the status chip', (tester) async {

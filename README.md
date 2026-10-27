@@ -2,11 +2,14 @@
 
 A practice app for engaged couples to answer difficult questions in private, then see a partner's status without seeing their words.
 
-This repository currently contains the phase 0 decisions and a Flutter prototype. The prototype runs on the Pixel 9 emulator. It does not create accounts, store answers on disk, or call a server or an AI provider. Do not type real relationship information.
+This repository currently contains the phase 0 decisions and a Flutter prototype. The prototype keeps practice answers in memory. It does not create accounts, store answers on disk, or call a server or an AI provider. Do not type real relationship information.
+
+The decided stack is a Flutter app, a Laravel API in `backend/`, and Supabase for Postgres and Auth. That split is recorded in [0002-laravel-and-supabase.md](docs/decisions/0002-laravel-and-supabase.md). The Laravel app is the next build, after the prototype is confirmed on the Pixel 9 emulator.
 
 ## Decisions
 
 - [Phase 0 boundaries](docs/decisions/0001-phase0-boundaries.md)
+- [Laravel and Supabase](docs/decisions/0002-laravel-and-supabase.md)
 - [Privacy and consent](docs/policies/privacy-and-consent.md)
 - [Safety and high-risk topics](docs/policies/safety-and-high-risk.md)
 - [Disconnect and retention](docs/policies/disconnect-and-retention.md)

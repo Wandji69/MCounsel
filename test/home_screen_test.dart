@@ -8,8 +8,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
+  Future<void> pumpHome(WidgetTester tester, QuestionRepository repository) {
+    tester.view.physicalSize = const Size(800, 2000);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+    return tester.pumpWidget(_home(repository: repository));
+  }
+
   testWidgets('home shows categories from the repository', (tester) async {
-    await tester.pumpWidget(_home(repository: _FakeRepository(_sampleCatalog())));
+    await pumpHome(tester, _FakeRepository(_sampleCatalog()));
     await tester.pump();
 
     expect(find.text('Values and life goals'), findsOneWidget);
@@ -25,9 +33,7 @@ void main() {
 
   testWidgets('home shows a loading state', (tester) async {
     final completer = Completer<QuestionCatalog>();
-    await tester.pumpWidget(
-      _home(repository: _PendingRepository(completer.future)),
-    );
+    await pumpHome(tester, _PendingRepository(completer.future));
 
     expect(find.text('Loading questions'), findsOneWidget);
 
@@ -38,12 +44,9 @@ void main() {
   });
 
   testWidgets('home shows an empty catalog', (tester) async {
-    await tester.pumpWidget(
-      _home(
-        repository: _FakeRepository(
-          const QuestionCatalog(categories: [], questions: []),
-        ),
-      ),
+    await pumpHome(
+      tester,
+      _FakeRepository(const QuestionCatalog(categories: [], questions: [])),
     );
     await tester.pump();
 
@@ -55,12 +58,13 @@ void main() {
       _sampleCatalog(),
       errorOnFirstCall: Exception('offline'),
     );
-    await tester.pumpWidget(_home(repository: repository));
+    await pumpHome(tester, repository);
     await tester.pump();
 
     expect(find.text('The questions could not be loaded.'), findsOneWidget);
 
     await tester.tap(find.text('Try again'));
+    await tester.pump();
     await tester.pump();
 
     expect(find.text('Values and life goals'), findsOneWidget);

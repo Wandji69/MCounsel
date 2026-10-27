@@ -1,4 +1,4 @@
-# 0001 — Phase 0 boundaries
+ 0001 — Phase 0 boundaries
 
 **Status:** Decided for the prototype. Interviews have not been done. A lawyer and a safety specialist have not reviewed these decisions.
 
